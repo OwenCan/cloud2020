@@ -93,6 +93,7 @@
     </dependencies>
   </dependencyManagement>
 
+  <!--热启动插件-->
   <build>
     <plugins>
       <plugin>
