@@ -26,3 +26,6 @@ eureka:
   instance:
     instance-id: payment8001 #修改eureka主页状态名称Status
     prefer-ip-address: true  #鼠标悬在status地址上，能够看到对应ip和端口，方便调试
+    lease-renewal-interval-in-seconds: 1 #Eureka客户端向服务端心跳实际间隔，默认30秒
+    lease-expiration-duration-in-seconds: 2 #Eureka服务端最后一次接收心跳后等待上线，默认是90秒
+
