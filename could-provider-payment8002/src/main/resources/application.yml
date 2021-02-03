@@ -23,3 +23,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: payment8002 #修改eureka主页状态名称Status
+    prefer-ip-address: true  #鼠标悬在status地址上，能够看到对应ip和端口，方便调试
