@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
+ * @program: cloud2020
  * @description:
  * @author: Owen Zhao
- * @create: 2021-02-01 22:38
- **/
+ * @create: 2021-02-03 10:39
+ */
 @RestController
 @Slf4j/*用lombok的记录日志注解*/
 public class PaymentController {
@@ -21,10 +22,8 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
-    //获取application.yml中的属性
     @Value("${server.port}")
     private String serverPort;
-
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -40,7 +39,7 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         if (payment != null) {
-            return new CommonResult(200, "插入成功，serverPort："+serverPort, payment);
+            return new CommonResult(200, "查询成功,serverport:" + serverPort, payment);
         } else {
             return new CommonResult(444, "查询失败" + id, null);
         }

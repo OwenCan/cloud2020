@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>支付模块-集群1</description>
+    <description>支付模块-集群2</description>
 
-    <artifactId>could-provider-payment8001</artifactId>
+    <artifactId>could-provider-payment8002</artifactId>
 
 
     <dependencies>
@@ -67,5 +67,4 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
-
 </project>
