@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextConfig {
 
     @Bean
-    @LoadBalanced //RestTemplate提供的负载均衡策略,否则会报错
+//    @LoadBalanced //RestTemplate提供的负载均衡策略,否则会报错，注释是因为手动测试调用自己写的负载均衡器
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }

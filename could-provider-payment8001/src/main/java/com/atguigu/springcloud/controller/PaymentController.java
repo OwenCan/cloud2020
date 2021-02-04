@@ -36,7 +36,7 @@ public class PaymentController {
     public CommonResult create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
         if (result > 0) {
-            return new CommonResult(200, "插入成功，serverPort："+serverPort, result);
+            return new CommonResult(200, "插入成功，serverPort：" + serverPort, result);
         } else {
             return new CommonResult(444, "插入失败", null);
         }
@@ -46,7 +46,7 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         if (payment != null) {
-            return new CommonResult(200, "插入成功，serverPort："+serverPort, payment);
+            return new CommonResult(200, "插入成功，serverPort：" + serverPort, payment);
         } else {
             return new CommonResult(444, "查询失败" + id, null);
         }
@@ -68,5 +68,15 @@ public class PaymentController {
         }
 
         return this.discoveryClient;
+    }
+
+    /**
+     * 测试自定义负载均衡器
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 }

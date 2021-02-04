@@ -44,4 +44,14 @@ public class PaymentController {
             return new CommonResult(444, "查询失败" + id, null);
         }
     }
+
+    /**
+     * 测试自定义负载均衡器
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
 }
