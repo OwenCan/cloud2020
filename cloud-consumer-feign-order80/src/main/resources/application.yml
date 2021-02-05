@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false #Feign调用作为客户端，不讲自己注入Eureka
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+logging:
+  level:
+    com.atguigu.springcloud.service.ConsumerFeignService: debug #指的feign的Service接口包
