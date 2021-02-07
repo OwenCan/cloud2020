@@ -52,7 +52,7 @@ public class PaymentController {
         }
     }
 
-    @GetMapping(value = "/oayment/discovery")
+    @GetMapping(value = "/payment/discovery")
     public Object discovery() {
         List<String> services = discoveryClient.getServices();
 
