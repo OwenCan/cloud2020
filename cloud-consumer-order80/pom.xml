@@ -13,6 +13,11 @@
     <artifactId>cloud-consumer-order80</artifactId>
 
     <dependencies>
+        <!--sleuth链路追踪-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!--前两个绑定在一起-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

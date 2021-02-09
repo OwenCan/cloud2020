@@ -69,7 +69,8 @@ public class OrderController {
     }
 
     /**
-     * 通过自定义负载均衡器，获取服务
+     * 通过自定义负载均衡器，获取服务，其他方法如果调用也需要引入自定义
+     * 否则会报错
      * @return
      */
     @GetMapping("/consumer/payment/mylb")
@@ -85,5 +86,11 @@ public class OrderController {
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
     }
 
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin() {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/zipkin", String.class);
+    }
+
 
 }
+
